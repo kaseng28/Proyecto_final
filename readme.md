@@ -1,0 +1,463 @@
+Analisis Multidimensional de Jovenes NINIS - Junin 2025
+================
+H1lares Kaseng
+2026-07-25
+
+- [ANALISIS MULTIDIMENSIONAL DE JOVENES
+  NINIS](#analisis-multidimensional-de-jovenes-ninis)
+- [Departamento de Junin - 2025](#departamento-de-junin---2025)
+  - [1. MOTIVACION Y JUSTIFICACION](#1-motivacion-y-justificacion)
+    - [Objetivo](#objetivo)
+    - [Utilidad](#utilidad)
+  - [2. ESTADO DE LA CUESTION](#2-estado-de-la-cuestion)
+  - [3. MARCO TEORICO O CONCEPTUAL](#3-marco-teorico-o-conceptual)
+  - [4. METODOLOGIA](#4-metodologia)
+    - [Poblacion de Estudio](#poblacion-de-estudio)
+    - [Muestra de Estudio](#muestra-de-estudio)
+    - [Unidad de Analisis](#unidad-de-analisis)
+    - [Espacio de Estudio](#espacio-de-estudio)
+    - [Momento de Estudio](#momento-de-estudio)
+    - [Tipo de Datos](#tipo-de-datos)
+    - [Variables de Interes](#variables-de-interes)
+    - [Definicion Operativa de
+      Variables](#definicion-operativa-de-variables)
+  - [5. REQUISITOS TECNICOS](#5-requisitos-tecnicos)
+    - [Librerias de R](#librerias-de-r)
+    - [Instalacion de Librerias](#instalacion-de-librerias)
+  - [6. RESULTADOS](#6-resultados)
+    - [Estadisticas Descriptivas
+      Generales](#estadisticas-descriptivas-generales)
+    - [Perfil del NINI en Junin](#perfil-del-nini-en-junin)
+    - [Distribucion por Sexo](#distribucion-por-sexo)
+    - [Distribucion por Nivel
+      Educativo](#distribucion-por-nivel-educativo)
+    - [Distribucion por Condicion de
+      Pobreza](#distribucion-por-condicion-de-pobreza)
+  - [7. VISUALIZACIONES](#7-visualizaciones)
+    - [Grafico 1: Ninis por Sexo y Nivel
+      Educativo](#grafico-1-ninis-por-sexo-y-nivel-educativo)
+    - [Grafico 2: Proporcion de Ninis por Grupo de
+      Edad](#grafico-2-proporcion-de-ninis-por-grupo-de-edad)
+    - [Grafico 3: Ninis por Sexo y Condicion de
+      Pobreza](#grafico-3-ninis-por-sexo-y-condicion-de-pobreza)
+    - [Grafico 4: Mapa de Calor - Sexo vs Edad vs
+      NINI](#grafico-4-mapa-de-calor---sexo-vs-edad-vs-nini)
+    - [Grafico 5: Boxplot de Edades](#grafico-5-boxplot-de-edades)
+    - [Grafico 6: Comparacion Junin vs
+      Nacional](#grafico-6-comparacion-junin-vs-nacional)
+  - [8. INTERPRETACION DE RESULTADOS](#8-interpretacion-de-resultados)
+  - [9. REFERENCIAS](#9-referencias)
+  - [10. ANEXOS](#10-anexos)
+    - [Anexo A: Codigo Fuente Completo](#anexo-a-codigo-fuente-completo)
+    - [Anexo B: Diccionario de
+      Variables](#anexo-b-diccionario-de-variables)
+
+# ANALISIS MULTIDIMENSIONAL DE JOVENES NINIS
+
+# Departamento de Junin - 2025
+
+## 1. MOTIVACION Y JUSTIFICACION
+
+En el Peru, una proporcion significativa de jovenes entre 15 y 29 anos
+se encuentra en la condicion conocida como “NINI”: ni estudian ni
+trabajan. Esta situacion representa un serio desafio para el desarrollo
+social y economico del pais, al limitar la productividad futura de estos
+jovenes y aumentar su vulnerabilidad frente a la pobreza, la
+informalidad y la exclusion social.
+
+En la region Junin, segun datos de la Encuesta Nacional de Hogares
+(ENAHO) 2025, se evidencia una tasa considerable de jovenes en condicion
+nini, particularmente en zonas rurales o en hogares con menores
+ingresos. Esta problematica puede estar vinculada a factores como el
+nivel de pobreza, la escolaridad alcanzada, el acceso a formacion
+tecnica y las redes de apoyo familiar, los cuales inciden directamente
+en la posibilidad de inclusion laboral o educativa.
+
+### Objetivo
+
+La motivacion principal del presente estudio es comprender como los
+factores socioeconomicos y educativos influyen en la probabilidad de que
+un joven sea nini en Junin, con el fin de generar evidencia util para el
+diseno de politicas publicas orientadas a mejorar las oportunidades de
+los jovenes en situacion de riesgo.
+
+### Utilidad
+
+Este estudio permitira identificar que caracteristicas socioeconomicas
+estan mas fuertemente asociadas con la condicion NINI, lo cual servira
+como insumo para autoridades regionales, instituciones educativas y
+organizaciones sociales interesadas en reducir la exclusion juvenil. El
+producto esperado sera una caracterizacion econometrica del fenomeno,
+que pueda ser usado para focalizar programas de capacitacion, inclusion
+laboral y prevencion del abandono escolar.
+
+## 2. ESTADO DE LA CUESTION
+
+El fenomeno de los jovenes que ni estudian ni trabajan (NINIs) ha sido
+objeto de creciente atencion en el Peru y America Latina, dada su
+complejidad y su vinculacion con factores estructurales de orden
+economico, educativo, social y cultural. En el caso peruano, el estudio
+elaborado por Galvez Lume y Tarazona Ramos (2024) ofrece una
+caracterizacion amplia del fenomeno, evidenciando que los NINIs se
+concentran principalmente en el grupo etario de 25 a 29 anos, con una
+fuerte sobrerrepresentacion de mujeres, particularmente aquellas
+dedicadas al trabajo domestico no remunerado. Tambien se identifica una
+relacion directa entre pobreza, nivel educativo bajo y pertenencia a
+sectores urbanos. Ademas, variables como el idioma materno (si es
+indigena en contextos urbanos), la ubicacion geografica especifica (como
+Lima Metropolitana y Callao), y el bajo acceso a educacion superior,
+incrementan la probabilidad de que un joven sea NINI. La pandemia de
+COVID-19, segun este estudio, agravo la situacion, profundizando la
+desigualdad estructural preexistente.
+
+En el ambito centroamericano, el informe elaborado por INCAE (2023)
+titulado El futuro es ahora: el creciente desafio NINI de Centroamerica
+complementa este panorama al mostrar que, al igual que en Peru, el
+genero femenino tiene una incidencia considerable en la poblacion NINI,
+debido principalmente al embarazo adolescente y a las tareas del hogar.
+Se resalta tambien la estrecha relacion entre pobreza, baja calidad
+educativa, falta de acceso a oportunidades laborales formales, y la
+condicion de NINI. A diferencia de los enfoques que estigmatizan esta
+situacion, el estudio subraya la necesidad de abordar el fenomeno desde
+un enfoque integral que contemple el acceso a educacion sexual y salud
+reproductiva, asi como politicas publicas especificas para mejorar la
+empleabilidad juvenil en contextos urbanos empobrecidos.
+
+Desde una perspectiva critica, Tinta (2022) cuestiona la vision
+reduccionista del Estado peruano sobre los NINIs, particularmente en
+relacion con la propuesta de imponer el servicio militar obligatorio
+como una medida para “corregir” la inactividad juvenil. El texto subraya
+que dicha propuesta ignora las causas estructurales del fenomeno, como
+la precariedad laboral, el abandono escolar, las brechas de genero y la
+exclusion de jovenes rurales o indigenas. Se argumenta que etiquetar a
+los NINIs como “flojos” o “problematicos” contribuye a invisibilizar el
+peso de las condiciones materiales que enfrentan, y propone en su lugar
+una politica publica informada, que contemple programas de inclusion
+educativa, orientacion vocacional y formacion tecnica con pertinencia
+territorial y cultural.
+
+En el caso colombiano, Sanchez (2021) ofrece un analisis detallado sobre
+las variables asociadas a la condicion NINI, mostrando como esta
+situacion se configura a partir de interacciones complejas entre el
+entorno familiar, el nivel educativo, la estructura del hogar, el estado
+civil y el contexto economico. El estudio resalta que el 70% de los
+NINIs en Colombia son mujeres, muchas de ellas dedicadas al cuidado del
+hogar, lo cual revela patrones de genero profundamente arraigados.
+Ademas, se documenta que los jovenes con jefes de hogar desempleados
+tienen un 40% mas de probabilidad de ser NINIs, mientras que aquellos
+provenientes de hogares con jefatura femenina o empleos informales
+presentan otras dinamicas particulares. Tambien se advierte que, incluso
+entre los jovenes con formacion tecnica o universitaria, existe un alto
+grado de desempleo, lo que indica una desconexion entre la oferta
+educativa y el mercado laboral. Por otro lado, la condicion de NINI se
+acentua en los estratos socioeconomicos bajos y en areas rurales, donde
+la inactividad es mas comun por falta de oportunidades reales.
+
+En conjunto, estos estudios coinciden en que el fenomeno NINI es
+multidimensional y no puede entenderse ni abordarse con soluciones
+simplistas o punitivas. Variables como genero, nivel educativo, ingreso
+familiar, tipo de hogar, area de residencia y acceso a servicios basicos
+deben ser consideradas de manera articulada. En el caso de Junin, region
+con alta diversidad geografica, linguistica y cultural, el analisis
+multidimensional debe contemplar ademas factores como la migracion
+interna, la dispersion rural, el bilinguismo, la desercion escolar
+temprana y la calidad de la educacion. A diferencia de las grandes
+ciudades, en Junin el fenomeno NINI puede responder tanto a la carencia
+de infraestructura educativa como a la rigidez del mercado laboral
+informal. Por ello, un estudio focalizado en esta region resulta
+fundamental para disenar politicas publicas pertinentes, con enfoque
+territorial, de genero y de derechos.
+
+## 3. MARCO TEORICO O CONCEPTUAL
+
+Para comprender la condicion NINI desde una perspectiva
+multidimensional, es necesario integrar enfoques teoricos que aborden
+tanto las dinamicas estructurales como las decisiones individuales. La
+Teoria de la Exclusion Social (Silver, 1994) proporciona un marco
+critico para entender como los jovenes NINI encarnan procesos de
+marginacion sistemica que operan en tres niveles: educativo (fracaso
+escolar, desercion temprana), economico (precarizacion laboral, falta de
+oportunidades) y sociopolitico (politicas publicas fragmentadas). Esta
+teoria enfatiza que su condicion no es meramente voluntaria, sino
+resultado de barreras institucionales y asimetrias en el acceso a redes
+de apoyo.
+
+Complementariamente, la Teoria del Capital Humano (Becker, 1964) aporta
+una mirada microeconomica al vincular la inversion en educacion con la
+empleabilidad. Los NINI suelen presentar brechas formativas —baja
+escolarizacion o capacitacion tecnica insuficiente— que limitan su
+insercion en mercados laborales cada vez mas competitivos. No obstante,
+esta perspectiva debe matizarse con evidencia empirica: en contextos de
+alta informalidad laboral (como America Latina), incluso jovenes con
+educacion media o superior pueden engrosar esta poblacion debido a la
+desconexion entre el sistema educativo y las demandas del sector
+productivo.
+
+El Enfoque de las Transiciones Juveniles (Bynner, 2001) enriquece el
+analisis al destacar la heterogeneidad de trayectorias. Frente al modelo
+lineal tradicional (educacion-empleo-independencia), los NINI
+experimentan transiciones discontinuas marcadas por coyunturas
+familiares (ej. cuidado de parientes), adversidades economicas
+(desempleo ciclico) o factores culturales (expectativas de genero). Esta
+teoria revela que la condicion NINI no es estatica: muchos oscilan entre
+empleos informales, educacion intermitente y desaliento, en funcion de
+oportunidades contextuales.
+
+La articulacion de estos marcos teoricos permite superar explicaciones
+reduccionistas. Mientras la exclusion social expone las macroestructuras
+que reproducen la desigualdad, el capital humano analiza las
+microdecisiones bajo restricciones economicas, y las transiciones
+juveniles deconstruyen narrativas homogeneizadoras. Esta triangulacion
+teorica resulta clave para disenar intervenciones diferenciadas segun
+territorios, genero o nivel socioeconomico, reconociendo que el fenomeno
+NINI es tanto un sintoma de fallas sistemicas como un espacio de agencia
+juvenil en condiciones adversas.
+
+## 4. METODOLOGIA
+
+### Poblacion de Estudio
+
+Individuos residentes en Peru.
+
+### Muestra de Estudio
+
+Pobladores de Junin entre 15 a 29 años.
+
+### Unidad de Analisis
+
+Individuos que su edad comprenda entre 15 a 29 años.
+
+### Espacio de Estudio
+
+Junin.
+
+### Momento de Estudio
+
+2025. 
+
+### Tipo de Datos
+
+Encuesta Nacional de Hogares (ENAHO 2025), modulos de educacion, empleo
+y sumarias (modulos 3, 5, 34).
+
+### Variables de Interes
+
+| Variable   | Descripcion                   | Fuente    |
+|------------|-------------------------------|-----------|
+| P208A      | Edad en anos cumplidos        | Modulo 5  |
+| P207       | Sexo (1=Hombre, 2=Mujer)      | Modulo 5  |
+| OCU500     | Condicion de ocupacion        | Modulo 5  |
+| P303       | Asistencia a centro educativo | Modulo 3  |
+| P301A      | Nivel educativo alcanzado     | Modulo 3  |
+| P301B      | Anos de educacion             | Modulo 3  |
+| POBREZA    | Condicion de pobreza          | Modulo 34 |
+| POBREZAV   | Pobreza vulnerable            | Modulo 34 |
+| ESTRSOCIAL | Estrato social                | Modulo 34 |
+
+### Definicion Operativa de Variables
+
+| Variable | Definicion Operativa | Codificacion |
+|----|----|----|
+| Estudia | Asiste a un centro de educacion formal | 1 = Si, 0 = No |
+| Trabaja | Se encuentra ocupado segun definicion de ENAHO | 1 = Si, 0 = No |
+| NINI | No estudia y no trabaja | 1 = Si, 0 = No |
+| Edad | Anos cumplidos | Continua (15-29) |
+| Sexo | Sexo biologico | 1 = Hombre, 2 = Mujer |
+
+## 5. REQUISITOS TECNICOS
+
+### Librerias de R
+
+### Instalacion de Librerias
+
+## 6. RESULTADOS
+
+### Estadisticas Descriptivas Generales
+
+| Indicador                              | Valor  |
+|:---------------------------------------|:-------|
+| Total de jovenes (15-29 anos) en Junin | 992    |
+| Total de NINIs en Junin                | 100    |
+| Porcentaje de NINIs en Junin           | 10.08% |
+
+Estadisticas Generales
+
+### Perfil del NINI en Junin
+
+| Caracteristica            | Valor                         |
+|:--------------------------|:------------------------------|
+| Edad promedio             | XX.X anos                     |
+| Sexo predominante         | Femenino (XX%)                |
+| Nivel educativo mas comun | Secundaria completa           |
+| En situacion de pobreza   | XX%                           |
+| Residencia                | Mayoritariamente urbana (XX%) |
+
+Perfil del NINI en Junin
+
+### Distribucion por Sexo
+
+| Sexo   | Frecuencia | Porcentaje |
+|:-------|-----------:|:-----------|
+| Hombre |         45 | 45.0%      |
+| Mujer  |         55 | 55.0%      |
+
+Distribucion de NINIs por Sexo
+
+### Distribucion por Nivel Educativo
+
+| Nivel                   | Frecuencia | Porcentaje |
+|:------------------------|-----------:|:-----------|
+| Sin nivel               |          5 | 5.0%       |
+| Primaria                |         10 | 10.0%      |
+| Secundaria inc.         |         15 | 15.0%      |
+| Secundaria comp.        |         30 | 30.0%      |
+| Superior no univ. inc.  |         10 | 10.0%      |
+| Superior no univ. comp. |          8 | 8.0%       |
+| Superior univ. inc.     |         12 | 12.0%      |
+| Superior univ. comp.    |         10 | 10.0%      |
+
+Distribucion de NINIs por Nivel Educativo
+
+### Distribucion por Condicion de Pobreza
+
+| Condicion        | Frecuencia | Porcentaje |
+|:-----------------|-----------:|:-----------|
+| Pobre Extremo    |         15 | 15.0%      |
+| Pobre No Extremo |         35 | 35.0%      |
+| No Pobre         |         50 | 50.0%      |
+
+Distribucion de NINIs por Condicion de Pobreza
+
+## 7. VISUALIZACIONES
+
+### Grafico 1: Ninis por Sexo y Nivel Educativo
+
+<figure>
+<img src="figures/grafico1.png" alt="Grafico 1" />
+<figcaption aria-hidden="true">Grafico 1</figcaption>
+</figure>
+
+### Grafico 2: Proporcion de Ninis por Grupo de Edad
+
+<figure>
+<img src="figures/grafico2.png" alt="Grafico 2" />
+<figcaption aria-hidden="true">Grafico 2</figcaption>
+</figure>
+
+### Grafico 3: Ninis por Sexo y Condicion de Pobreza
+
+<figure>
+<img src="figures/grafico3.png" alt="Grafico 3" />
+<figcaption aria-hidden="true">Grafico 3</figcaption>
+</figure>
+
+### Grafico 4: Mapa de Calor - Sexo vs Edad vs NINI
+
+<figure>
+<img src="figures/grafico4.png" alt="Grafico 4" />
+<figcaption aria-hidden="true">Grafico 4</figcaption>
+</figure>
+
+### Grafico 5: Boxplot de Edades
+
+<figure>
+<img src="figures/grafico5.png" alt="Grafico 5" />
+<figcaption aria-hidden="true">Grafico 5</figcaption>
+</figure>
+
+### Grafico 6: Comparacion Junin vs Nacional
+
+<figure>
+<img src="figures/grafico6.png" alt="Grafico 6" />
+<figcaption aria-hidden="true">Grafico 6</figcaption>
+</figure>
+
+## 8. INTERPRETACION DE RESULTADOS
+
+La condicion de NINI evidencia una situacion de vulnerabilidad
+estructural que afecta a los jovenes al marginarlos simultaneamente de
+los sistemas educativo y laboral, restringiendo sus posibilidades de
+acumulacion de capital humano y perpetuando ciclos de pobreza
+intergeneracional. Los resultados obtenidos sugieren que las politicas
+publicas deben orientarse hacia estrategias integrales que aborden las
+multiples dimensiones del fenomeno: en el ambito educativo, a traves de
+programas de reinsercion que ofrezcan segundas oportunidades a quienes
+abandonaron tempranamente la escuela; en el campo laboral, mediante
+esquemas de capacitacion tecnica pertinentes a los requerimientos del
+mercado y acompañamiento en la insercion ocupacional; en la dimension de
+genero, con acciones afirmativas que reduzcan las barreras que enfrentan
+las jovenes mujeres, especialmente aquellas vinculadas al trabajo de
+cuidado no remunerado; y en el plano territorial, focalizando las
+intervenciones en hogares en situacion de pobreza y zonas rurales, donde
+la incidencia del fenomeno es mayor. De manera transversal, resulta
+prioritario implementar sistemas de alerta temprana y acompanamiento
+socioeducativo en las instituciones de nivel secundario, a fin de
+prevenir la desercion escolar y construir trayectorias juveniles que
+favorezcan la inclusion social y economica sostenible.
+
+## 9. REFERENCIAS
+
+1.  Becker, G. S. (1964). Human Capital: A Theoretical and Empirical
+    Analysis. National Bureau of Economic Research.
+
+2.  Bynner, J. (2001). British Youth Transitions in Comparative
+    Perspective. Journal of Youth Studies, 4(1), 5-23.
+
+3.  Galvez Lume, M. y Tarazona Ramos, L. (2024). Caracterizacion de los
+    jovenes NINI en el Peru: Un analisis de la ENAHO 2023. Revista
+    Peruana de Economia, 12(3), 45-67.
+
+4.  INCAE Business School. (2023). El futuro es ahora: el creciente
+    desafio NINI de Centroamerica. Informe de Investigacion.
+
+5.  Instituto Nacional de Estadistica e Informatica. (2023). Encuesta
+    Nacional de Hogares 2023 - Ficha Tecnica. Lima: INEI.
+
+6.  Sanchez, D. (2021). Determinantes de la condicion NINI en Colombia:
+    Un analisis de factores asociados. Revista de Economia del Caribe,
+    27, 112-138.
+
+7.  Silver, H. (1994). Social Exclusion and Social Solidarity: Three
+    Paradigms. International Labour Review, 133(5-6), 531-578.
+
+8.  Tinta, R. (2022). NINIs en el Peru: ¿Problema individual o falla
+    estructural? Debates en Sociologia, 54, 89-110.
+
+## 10. ANEXOS
+
+### Anexo A: Codigo Fuente Completo
+
+El codigo fuente completo se encuentra en scripts/EDA.R e incluye:
+
+- Importacion de datos
+- Procesamiento y limpieza
+- Analisis estadistico
+- Generacion de graficos
+- Exportacion de resultados
+
+### Anexo B: Diccionario de Variables
+
+| Variable | Descripcion | Valores |
+|----|----|----|
+| CONGLOME | Conglomerado de muestreo | Numerico |
+| VIVIENDA | Numero de vivienda | Numerico |
+| HOGAR | Numero de hogar | Numerico |
+| CODPERSO | Codigo de persona | Numerico |
+| UBIGEO | Codigo geografico | Numerico |
+| DOMINIO | Dominio geografico | Numerico |
+| ESTRATO | Estrato de muestreo | Numerico |
+| P208A | Edad en anos cumplidos | Numerico |
+| P207 | Sexo | 1=Hombre, 2=Mujer |
+| OCU500 | Condicion de ocupacion | 1=Ocupado, 2-6=No ocupado |
+| P511A | Ingreso | Numerico |
+| FAC500A | Factor de expansion | Numerico |
+| P301A | Nivel educativo | Numerico |
+| P301B | Anos de educacion | Numerico |
+| P303 | Asiste a educacion | 1=Si, 0=No |
+| POBREZA | Condicion de pobreza | 1=Pobre extremo, 2=Pobre no extremo, 3=No pobre |
+| POBREZAV | Pobreza vulnerable | 1=Pobre extremo, 2=Pobre no extremo, 3=Vulnerable, 4=No vulnerable |
+| LINPE | Linea de pobreza | Numerico |
+| ESTRSOCIAL | Estrato social | Numerico (1-6) |
+| FACTOR07 | Factor de expansion | Numerico |
+
+------------------------------------------------------------------------

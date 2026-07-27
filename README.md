@@ -34,25 +34,21 @@ Hilares Kaseng
     - [Grafico 5: Boxplot de Edades](#grafico-5-boxplot-de-edades)
     - [Grafico 6: Comparacion Junin vs
       Nacional](#grafico-6-comparacion-junin-vs-nacional)
-  - [5. Parte 2 — Analisis final](#5-parte-2--analisis-final)
-    - [5.1 Pregunta de analisis](#51-pregunta-de-analisis)
-    - [5.2 Analisis de la relacion](#52-analisis-de-la-relacion)
-    - [5.3 Discusion](#53-discusion)
-  - [6. Conclusiones](#6-conclusiones)
-  - [7. Estructura del repositorio](#7-estructura-del-repositorio)
-  - [8. Requisitos tecnicos](#8-requisitos-tecnicos)
+  - [5. Conclusiones](#5-conclusiones)
+  - [6. Estructura del repositorio](#6-estructura-del-repositorio)
+  - [7. Requisitos tecnicos](#7-requisitos-tecnicos)
     - [8.1 Software](#81-software)
-    - [8.2 Librerias de R](#82-librerias-de-r)
-    - [8.3 Instalacion de librerias](#83-instalacion-de-librerias)
-    - [8.4 Ejecucion del proyecto](#84-ejecucion-del-proyecto)
-  - [9. Anexos](#9-anexos)
+    - [7.2 Librerias de R](#72-librerias-de-r)
+    - [7.3 Instalacion de librerias](#73-instalacion-de-librerias)
+    - [7.4 Ejecucion del proyecto](#74-ejecucion-del-proyecto)
+  - [8. Anexos](#8-anexos)
     - [Anexo A: Codigo Fuente Completo](#anexo-a-codigo-fuente-completo)
     - [Anexo B: Diccionario de
       Variables](#anexo-b-diccionario-de-variables)
-  - [11. Analisis Final - Parte 2](#11-analisis-final---parte-2)
-    - [11.1 Pregunta de Analisis](#111-pregunta-de-analisis)
-    - [11.2 Grafico Final](#112-grafico-final)
-    - [11.3 Conclusiones Finales](#113-conclusiones-finales)
+  - [9. Analisis Final - Parte 2](#9-analisis-final---parte-2)
+    - [9.1 Pregunta de Analisis](#91-pregunta-de-analisis)
+    - [9.2 Grafico Final](#92-grafico-final)
+    - [9.3 Conclusiones Finales](#93-conclusiones-finales)
 
 # ANALISIS MULTIDIMENSIONAL DE JOVENES NINIS
 
@@ -314,49 +310,7 @@ Grafico 6
 
 </figure>
 
-## 5. Parte 2 — Analisis final
-
-### 5.1 Pregunta de analisis
-
-Existe una relacion entre el nivel educativo, la condicion de pobreza y
-la probabilidad de que un joven de Junin sea clasificado como NINI?
-
-### 5.2 Analisis de la relacion
-
-Se analizo la distribucion de los NINIs segun nivel educativo y
-condicion de pobreza, identificando los siguientes patrones:
-
-| Nivel_Educativo    | Porcentaje_NINIs |
-|:-------------------|:-----------------|
-| Sin nivel/Primaria | 15.0%            |
-| Secundaria         | 45.0%            |
-| Superior           | 40.0%            |
-
-Incidencia de NINI segun Nivel Educativo
-
-| Condicion        | Porcentaje_NINIs |
-|:-----------------|:-----------------|
-| Pobre Extremo    | 15.0%            |
-| Pobre No Extremo | 35.0%            |
-| No Pobre         | 50.0%            |
-
-Incidencia de NINI segun Condicion de Pobreza
-
-### 5.3 Discusion
-
-Los resultados sugieren que la condicion NINI en Junin responde a
-factores estructurales vinculados al sistema educativo y a las
-condiciones economicas del hogar. Los jovenes con menor nivel educativo
-enfrentan barreras significativas para acceder al mercado laboral,
-mientras que aquellos en hogares en situacion de pobreza ven limitadas
-sus oportunidades de formacion e insercion laboral.
-
-La sobrerrepresentacion femenina entre los NINIs (55%) sugiere la
-existencia de brechas de genero que limitan la participacion de las
-jovenes en el sistema educativo y el mercado laboral, posiblemente
-vinculadas a roles de cuidado no remunerado.
-
-## 6. Conclusiones
+## 5. Conclusiones
 
 Existe una relacion clara entre el nivel educativo y la condicion NINI
 en Junin: los jovenes con secundaria completa o superior tienen menor
@@ -377,7 +331,7 @@ capacitacion laboral dirigidos a jovenes de hogares en situacion de
 pobreza y con bajo nivel educativo podrian tener mayor costo-efectividad
 en la reduccion de la poblacion NINI.
 
-## 7. Estructura del repositorio
+## 6. Estructura del repositorio
 
     Proyecto_Final/
     │
@@ -404,17 +358,17 @@ Nota sobre data/: Los archivos de la ENAHO 2025 no se incluyen en el
 repositorio por su peso. Pueden descargarse del portal de Microdatos del
 INEI.
 
-## 8. Requisitos tecnicos
+## 7. Requisitos tecnicos
 
 ### 8.1 Software
 
 R version 4.3.0 o superior RStudio (recomendado)
 
-### 8.2 Librerias de R
+### 7.2 Librerias de R
 
-### 8.3 Instalacion de librerias
+### 7.3 Instalacion de librerias
 
-### 8.4 Ejecucion del proyecto
+### 7.4 Ejecucion del proyecto
 
 Descargar los datos del portal de Microdatos del INEI y colocarlos en
 data/
@@ -425,7 +379,7 @@ Instalar los paquetes necesarios
 
 Ejecutar scripts/EDA.R
 
-## 9. Anexos
+## 8. Anexos
 
 ### Anexo A: Codigo Fuente Completo
 
@@ -466,21 +420,21 @@ Exportacion de resultados
 | ESTRSOCIAL | Estrato social | Numerico (1-6) |
 | FACTOR07 | Factor de expansion | Numerico |
 
-## 11. Analisis Final - Parte 2
+## 9. Analisis Final - Parte 2
 
-### 11.1 Pregunta de Analisis
+### 9.1 Pregunta de Analisis
 
 Existe una relacion entre el nivel educativo, la condicion de pobreza y
 la probabilidad de que un joven de Junin sea clasificado como NINI?
 
-### 11.2 Grafico Final
+### 9.2 Grafico Final
 
 <figure>
 <img src="figures/grafico_final.png" alt="Grafico Final" />
 <figcaption aria-hidden="true">Grafico Final</figcaption>
 </figure>
 
-### 11.3 Conclusiones Finales
+### 9.3 Conclusiones Finales
 
 1.  Los jovenes con menor nivel educativo (Sin nivel/Primaria) presentan
     la mayor incidencia de NINI en Junin.

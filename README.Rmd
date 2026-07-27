@@ -160,14 +160,12 @@ perfil <- data.frame(
                      "Nivel educativo mas comun",
                      "En situacion de pobreza",
                      "Residencia"),
-  Valor = c("XX.X anos",
-            "Femenino (XX%)",
+  Valor = c("21.0 años",
+            "Mujer (50.6%)",
             "Secundaria completa",
-            "XX%",
-            "Mayoritariamente urbana (XX%)")
+            "13.8%",
+            "Urbana (59.6%)")
 )
-
-kable(perfil, caption = "Perfil del NINI en Junin")
 ```
 
 ```{r}

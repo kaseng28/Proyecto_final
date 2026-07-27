@@ -203,16 +203,6 @@ subtitulo, etiquetas de ejes y tema visual homogeneo:
 
 Estadisticas Generales
 
-| Caracteristica            | Valor                         |
-|:--------------------------|:------------------------------|
-| Edad promedio             | XX.X anos                     |
-| Sexo predominante         | Femenino (XX%)                |
-| Nivel educativo mas comun | Secundaria completa           |
-| En situacion de pobreza   | XX%                           |
-| Residencia                | Mayoritariamente urbana (XX%) |
-
-Perfil del NINI en Junin
-
 | Sexo   | Frecuencia | Porcentaje |
 |:-------|-----------:|:-----------|
 | Hombre |         45 | 45.0%      |

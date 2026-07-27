@@ -49,6 +49,10 @@ Hilares Kaseng
     - [Anexo A: Codigo Fuente Completo](#anexo-a-codigo-fuente-completo)
     - [Anexo B: Diccionario de
       Variables](#anexo-b-diccionario-de-variables)
+  - [11. Analisis Final - Parte 2](#11-analisis-final---parte-2)
+    - [11.1 Pregunta de Analisis](#111-pregunta-de-analisis)
+    - [11.2 Grafico Final](#112-grafico-final)
+    - [11.3 Conclusiones Finales](#113-conclusiones-finales)
 
 # ANALISIS MULTIDIMENSIONAL DE JOVENES NINIS
 
@@ -392,6 +396,7 @@ en la reduccion de la poblacion NINI.
     │
     ├── scripts/
     │   └── EDA.R
+    │   └── 04_analisis_final.R
     │
     └── README.md
 
@@ -460,3 +465,37 @@ Exportacion de resultados
 | LINPE | Linea de pobreza | Numerico |
 | ESTRSOCIAL | Estrato social | Numerico (1-6) |
 | FACTOR07 | Factor de expansion | Numerico |
+
+## 11. Analisis Final - Parte 2
+
+### 11.1 Pregunta de Analisis
+
+Existe una relacion entre el nivel educativo, la condicion de pobreza y
+la probabilidad de que un joven de Junin sea clasificado como NINI?
+
+### 11.2 Grafico Final
+
+<figure>
+<img src="figures/grafico_final.png" alt="Grafico Final" />
+<figcaption aria-hidden="true">Grafico Final</figcaption>
+</figure>
+
+### 11.3 Conclusiones Finales
+
+1.  Los jovenes con menor nivel educativo (Sin nivel/Primaria) presentan
+    la mayor incidencia de NINI en Junin.
+
+2.  La pobreza del hogar esta fuertemente asociada con la condicion
+    NINI. Los jovenes en hogares en pobreza extrema tienen una
+    probabilidad significativamente mayor de ser NINI.
+
+3.  La combinacion de bajo nivel educativo y pobreza extrema multiplica
+    el riesgo de ser NINI.
+
+4.  Las mujeres presentan mayor incidencia que los hombres en la
+    poblacion NINI, lo que sugiere brechas de genero en el acceso a
+    educacion y empleo.
+
+5.  La condicion NINI no es un problema individual, sino el resultado de
+    desigualdades estructurales que requieren politicas publicas
+    integrales.

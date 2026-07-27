@@ -375,11 +375,25 @@ en la reduccion de la poblacion NINI.
 
 ## 7. Estructura del repositorio
 
-Proyecto_Final/ │ ├── data/ │ ├── Enaho01a-2025-500.sav │ ├──
-Enaho01A-2025-300.sav │ └── Sumaria-2025.sav │ ├── figures/ │ ├──
-grafico1.png │ ├── grafico2.png │ ├── grafico3.png │ ├── grafico4.png │
-├── grafico5.png │ └── grafico6.png │ ├── scripts/ │ └── EDA.R │ └──
-README.md
+    Proyecto_Final/
+    │
+    ├── data/
+    │   ├── Enaho01a-2025-500.sav
+    │   ├── Enaho01A-2025-300.sav
+    │   └── Sumaria-2025.sav
+    │
+    ├── figures/
+    │   ├── grafico1.png
+    │   ├── grafico2.png
+    │   ├── grafico3.png
+    │   ├── grafico4.png
+    │   ├── grafico5.png
+    │   └── grafico6.png
+    │
+    ├── scripts/
+    │   └── EDA.R
+    │
+    └── README.md
 
 Nota sobre data/: Los archivos de la ENAHO 2025 no se incluyen en el
 repositorio por su peso. Pueden descargarse del portal de Microdatos del

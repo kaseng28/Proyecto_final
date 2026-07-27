@@ -283,6 +283,8 @@ Junin se encuentra por debajo del promedio nacional en incidencia de Ninis (10.0
 Implicancia de politica: los programas de reinsercion educativa y capacitacion laboral dirigidos a jovenes de hogares en situacion de pobreza y con bajo nivel educativo podrian tener mayor costo-efectividad en la reduccion de la poblacion NINI.
 
 ## 7. Estructura del repositorio
+
+```
 Proyecto_Final/
 │
 ├── data/
@@ -302,6 +304,7 @@ Proyecto_Final/
 │   └── EDA.R
 │
 └── README.md
+```
 
 Nota sobre data/: Los archivos de la ENAHO 2025 no se incluyen en el repositorio por su peso. Pueden descargarse del portal de Microdatos del INEI.
 
